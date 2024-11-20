@@ -13,7 +13,7 @@ server:
 spring:
   # 应用名称
   application:
-    name: bage-finance-admin-api
+    name: yuxuan-finance-admin-api
   # 数据库配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -47,7 +47,7 @@ spring:
 # Mybatis
 mybatis:
   mapper-locations: classpath*:mapper/**/*Mapper.xml
-  type-aliases-package: com.bage
+  type-aliases-package: com.yuxuan
   configuration:
     map-underscore-to-camel-case: true
     default-statement-timeout: 15
@@ -55,8 +55,8 @@ mybatis:
 # Swagger
 swagger:
   enable: true
-  name: BAGE-FINANCE-ADMIN-API
-  description: BAGE-FINANCE-ADMIN-API 接口文档
+  name: YUXUAN-FINANCE-ADMIN-API
+  description: YUXUAN-FINANCE-ADMIN-API 接口文档
   version: 0.0.1
 
 # Swagger UI
