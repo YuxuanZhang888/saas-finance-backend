@@ -1,0 +1,114 @@
+2024-11-18 14:32:18.974 [main] INFO  com.yuxuan.FinanceApiApplication - Starting FinanceApiApplication using Java 17.0.11 on wlan073192.wireless.utwente.nl with PID 25175 (/Users/yuxuan/Documents/sass_finance/yuxuan-finance-api/target/classes started by yuxuan in /Users/yuxuan/Documents/sass_finance/yuxuan-parent)
+2024-11-18 14:32:18.974 [main] INFO  com.yuxuan.FinanceApiApplication - The following 1 profile is active: "local"
+2024-11-18 14:32:19.371 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.yuxuan]' package. Please check your configuration.
+2024-11-18 14:32:19.577 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-18 14:32:19.577 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-11-18 14:32:19.613 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-11-18 14:32:19.888 [main] ERROR i.n.r.d.DnsServerAddressStreamProviders - Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at io.netty.resolver.dns.DnsServerAddressStreamProviders.<clinit>(DnsServerAddressStreamProviders.java:64)
+	at io.netty.resolver.dns.DnsNameResolverBuilder.<init>(DnsNameResolverBuilder.java:60)
+	at io.lettuce.core.resource.AddressResolverGroupProvider$DefaultDnsAddressResolverGroupWrapper.<clinit>(AddressResolverGroupProvider.java:56)
+	at io.lettuce.core.resource.AddressResolverGroupProvider.<clinit>(AddressResolverGroupProvider.java:35)
+	at io.lettuce.core.resource.DefaultClientResources.<clinit>(DefaultClientResources.java:112)
+	at org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration.lettuceClientResources(LettuceConnectionConfiguration.java:71)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.yuxuan.FinanceApiApplication.main(FinanceApiApplication.java:10)
+Caused by: java.lang.UnsatisfiedLinkError: failed to load the required native library
+	at io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider.ensureAvailability(MacOSDnsServerAddressStreamProvider.java:110)
+	at io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider.<init>(MacOSDnsServerAddressStreamProvider.java:120)
+	... 36 common frames omitted
+Caused by: java.lang.UnsatisfiedLinkError: could not load a native library: netty_resolver_dns_native_macos_aarch_64
+	at io.netty.util.internal.NativeLibraryLoader.load(NativeLibraryLoader.java:239)
+	at io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider.loadNativeLibrary(MacOSDnsServerAddressStreamProvider.java:92)
+	at io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider.<clinit>(MacOSDnsServerAddressStreamProvider.java:77)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:467)
+	at io.netty.resolver.dns.DnsServerAddressStreamProviders$1.run(DnsServerAddressStreamProviders.java:50)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at io.netty.resolver.dns.DnsServerAddressStreamProviders.<clinit>(DnsServerAddressStreamProviders.java:46)
+	... 30 common frames omitted
+	Suppressed: java.lang.UnsatisfiedLinkError: could not load a native library: netty_resolver_dns_native_macos
+		at io.netty.util.internal.NativeLibraryLoader.load(NativeLibraryLoader.java:239)
+		at io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider.loadNativeLibrary(MacOSDnsServerAddressStreamProvider.java:95)
+		... 36 common frames omitted
+	Caused by: java.io.FileNotFoundException: META-INF/native/libnetty_resolver_dns_native_macos.jnilib
+		at io.netty.util.internal.NativeLibraryLoader.load(NativeLibraryLoader.java:181)
+		... 37 common frames omitted
+		Suppressed: java.lang.UnsatisfiedLinkError: no netty_resolver_dns_native_macos in java.library.path: /Users/yuxuan/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+			at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2429)
+			at java.base/java.lang.Runtime.loadLibrary0(Runtime.java:818)
+			at java.base/java.lang.System.loadLibrary(System.java:1993)
+			at io.netty.util.internal.NativeLibraryUtil.loadLibrary(NativeLibraryUtil.java:38)
+			at io.netty.util.internal.NativeLibraryLoader.loadLibrary(NativeLibraryLoader.java:391)
+			at io.netty.util.internal.NativeLibraryLoader.load(NativeLibraryLoader.java:161)
+			... 37 common frames omitted
+			Suppressed: java.lang.UnsatisfiedLinkError: no netty_resolver_dns_native_macos in java.library.path: /Users/yuxuan/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+				at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2429)
+				at java.base/java.lang.Runtime.loadLibrary0(Runtime.java:818)
+				at java.base/java.lang.System.loadLibrary(System.java:1993)
+				at io.netty.util.internal.NativeLibraryUtil.loadLibrary(NativeLibraryUtil.java:38)
+				at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+				at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+				at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+				at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+				at io.netty.util.internal.NativeLibraryLoader$1.run(NativeLibraryLoader.java:425)
+				at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+				at io.netty.util.internal.NativeLibraryLoader.loadLibraryByHelper(NativeLibraryLoader.java:417)
+				at io.netty.util.internal.NativeLibraryLoader.loadLibrary(NativeLibraryLoader.java:383)
+				... 38 common frames omitted
+Caused by: java.io.FileNotFoundException: META-INF/native/libnetty_resolver_dns_native_macos_aarch_64.jnilib
+	at io.netty.util.internal.NativeLibraryLoader.load(NativeLibraryLoader.java:181)
+	... 37 common frames omitted
+	Suppressed: java.lang.UnsatisfiedLinkError: no netty_resolver_dns_native_macos_aarch_64 in java.library.path: /Users/yuxuan/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+		at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2429)
+		at java.base/java.lang.Runtime.loadLibrary0(Runtime.java:818)
+		at java.base/java.lang.System.loadLibrary(System.java:1993)
+		at io.netty.util.internal.NativeLibraryUtil.loadLibrary(NativeLibraryUtil.java:38)
+		at io.netty.util.internal.NativeLibraryLoader.loadLibrary(NativeLibraryLoader.java:391)
+		at io.netty.util.internal.NativeLibraryLoader.load(NativeLibraryLoader.java:161)
+		... 37 common frames omitted
+		Suppressed: java.lang.UnsatisfiedLinkError: no netty_resolver_dns_native_macos_aarch_64 in java.library.path: /Users/yuxuan/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+			at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2429)
+			at java.base/java.lang.Runtime.loadLibrary0(Runtime.java:818)
+			at java.base/java.lang.System.loadLibrary(System.java:1993)
+			at io.netty.util.internal.NativeLibraryUtil.loadLibrary(NativeLibraryUtil.java:38)
+			at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+			at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+			at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+			at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+			at io.netty.util.internal.NativeLibraryLoader$1.run(NativeLibraryLoader.java:425)
+			at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+			at io.netty.util.internal.NativeLibraryLoader.loadLibraryByHelper(NativeLibraryLoader.java:417)
+			at io.netty.util.internal.NativeLibraryLoader.loadLibrary(NativeLibraryLoader.java:383)
+			... 38 common frames omitted
+2024-11-18 14:32:20.116 [main] INFO  com.yuxuan.FinanceApiApplication - Started FinanceApiApplication in 1.342 seconds (JVM running for 1.603)
+2024-11-18 14:33:06.756 [http-nio-8091-exec-6] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'

@@ -1,0 +1,8 @@
+com/yuxuan/common/dto/ApiResponse.class
+com/yuxuan/common/constant/ApiResponseCode.class
+com/yuxuan/common/exception/BizException.class
+com/yuxuan/common/config/RedisTemplateDefaultConfig.class
+com/yuxuan/common/exception/BaseException.class
+com/yuxuan/common/exception/LoginException.class
+com/yuxuan/common/exception/ParameterException.class
+com/yuxuan/common/exception/GlobalExceptionHandler.class
